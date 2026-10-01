@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">⌂</span>
+            House Price Predictor
+        </a>
+        <span class="nav-label">ML-Powered Estimation</span>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">SMART REAL ESTATE</span>
+            <h1>Predict <span>House Prices</span></h1>
+            <p>Enter your property details to get an estimated price powered by machine learning.</p>
+        </section>
+
+        <section class="dashboard">
+            <form id="prediction-form" class="card form-card">
+                <div class="card-heading">
+                    <div class="heading-icon">⌘</div>
+                    <div>
+                        <h2>House Details</h2>
+                        <p>Tell us about your property</p>
+                    </div>
+                </div>
+
+                <label for="living_area">Living Area <span>(sq ft)</span></label>
+                <input id="living_area" name="living_area"
+                       type="number" min="1" step="any"
+                       value="1000" required>
+
+                <label for="grade">Grade of the House <span>(1–13)</span></label>
+                <input id="grade" name="grade" type="number"
+                       min="1" max="13" step="1" value="7" required>
+
+                <label for="num_of_bathrooms">Number of Bathrooms</label>
+                <input id="num_of_bathrooms" name="num_of_bathrooms"
+                       type="number" min="0.5" step="0.5"
+                       value="2" required>
+
+                <label for="num_of_bedrooms">Number of Bedrooms</label>
+                <input id="num_of_bedrooms" name="num_of_bedrooms"
+                       type="number" min="1" step="1"
+                       value="3" required>
+
+                <label for="num_of_floors">Number of Floors</label>
+                <input id="num_of_floors" name="num_of_floors"
+                       type="number" min="0.5" step="0.5"
+                       value="1" required>
+
+                <button id="predict-button" type="submit">
+                    <span>✦</span> Predict Price
+                </button>
+
+                <p class="form-footnote">All five fields are required.</p>
+            </form>
+
+            <section class="card result-card" aria-live="polite">
+                <div class="card-heading">
+                    <div class="heading-icon result-icon">↗</div>
+                    <div>
+                        <h2>Prediction Result</h2>
+                        <p>Your estimated property value</p>
+                    </div>
+                </div>
+
+                <div id="result-panel" class="result-panel">
+                    <div class="house-icon">⌂</div>
+                    <p class="result-label">Estimated Price</p>
+                    <h3 id="predicted-price">₹ —</h3>
+                    <p id="result-message" class="result-message">
+                        Enter your house details and click Predict Price.
+                    </p>
+                </div>
+
+                <div class="summary">
+                    <h3>Input Summary</h3>
+                    <div class="summary-row">
+                        <span>Living Area</span>
+                        <strong id="summary-area">1,000 sq ft</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Grade</span>
+                        <strong id="summary-grade">7</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Bathrooms</span>
+                        <strong id="summary-bathrooms">2</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Bedrooms</span>
+                        <strong id="summary-bedrooms">3</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Floors</span>
+                        <strong id="summary-floors">1</strong>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>ⓘ &nbsp;Model note</strong>
+                    <p>This is a machine-learning estimate, not a professional property valuation.</p>
+                </div>
+            </section>
+        </section>
+
+        <footer>Built with FastAPI, Python &amp; Machine Learning</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

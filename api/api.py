@@ -3,6 +3,19 @@ from pathlib import Path
 import pandas as pd
 import joblib
 from schema.schema import HouseFeatures
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    alloworigins=[
+            "http://localhost:5500",
+            "http://127.0.0.1.5500",
+    ],
+    allow_methods=["*"],
+    allow_header=["*"],
+)
 
 def load_model(): 
     model_path = (
@@ -16,7 +29,6 @@ def load_model():
     
 pipeline = load_model()
 
-app = FastAPI()
 
 
 
