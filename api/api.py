@@ -9,12 +9,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    alloworigins=[
+    allow_origins=[
             "http://localhost:5500",
-            "http://127.0.0.1.5500",
+            "http://127.0.0.1:5500",
     ],
     allow_methods=["*"],
-    allow_header=["*"],
+    allow_headers=["*"],
 )
 
 def load_model(): 
