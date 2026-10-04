@@ -95,6 +95,7 @@ form.addEventListener("submit", async (event) => {
         }
 
     } catch (error) {
+        
         console.error("Prediction error:", error);
 
         priceElement.textContent = "Unavailable";
